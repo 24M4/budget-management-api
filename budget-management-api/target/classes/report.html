@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Report</title>
+</head>
+<body>
+    <h1>Expense Report</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody id="reportTable"></tbody>
+    </table>
+
+    <script>
+        fetch('/api/reports/summary')
+            .then(response => response.json())
+            .then(data => {
+                const table = document.getElementById('reportTable');
+                data.transactions.forEach(transaction => {
+                    const row = table.insertRow();
+                    row.insertCell(0).innerText = transaction.category;
+                    row.insertCell(1).innerText = transaction.amount;
+                    row.insertCell(2).innerText = transaction.date;
+                });
+            });
+    </script>
+</body>
+</html>

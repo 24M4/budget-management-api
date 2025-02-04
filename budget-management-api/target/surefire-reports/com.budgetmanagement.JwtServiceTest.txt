@@ -1,0 +1,35 @@
+-------------------------------------------------------------------------------
+Test set: com.budgetmanagement.JwtServiceTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.312 s <<< FAILURE! -- in com.budgetmanagement.JwtServiceTest
+com.budgetmanagement.JwtServiceTest.testGenerateToken -- Time elapsed: 0.290 s <<< ERROR!
+java.lang.NoClassDefFoundError: javax/xml/bind/DatatypeConverter
+	at io.jsonwebtoken.impl.Base64Codec.encode(Base64Codec.java:21)
+	at io.jsonwebtoken.impl.Base64UrlCodec.encode(Base64UrlCodec.java:22)
+	at io.jsonwebtoken.impl.DefaultJwtBuilder.base64UrlEncode(DefaultJwtBuilder.java:349)
+	at io.jsonwebtoken.impl.DefaultJwtBuilder.compact(DefaultJwtBuilder.java:295)
+	at com.budgetmanagement.service.JwtService.generateToken(JwtService.java:26)
+	at com.budgetmanagement.JwtServiceTest.testGenerateToken(JwtServiceTest.java:30)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.ClassNotFoundException: javax.xml.bind.DatatypeConverter
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	... 9 more
+
+com.budgetmanagement.JwtServiceTest.testValidateToken -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.NoClassDefFoundError: javax/xml/bind/DatatypeConverter
+	at io.jsonwebtoken.impl.Base64Codec.encode(Base64Codec.java:21)
+	at io.jsonwebtoken.impl.Base64UrlCodec.encode(Base64UrlCodec.java:22)
+	at io.jsonwebtoken.impl.DefaultJwtBuilder.base64UrlEncode(DefaultJwtBuilder.java:349)
+	at io.jsonwebtoken.impl.DefaultJwtBuilder.compact(DefaultJwtBuilder.java:295)
+	at com.budgetmanagement.service.JwtService.generateToken(JwtService.java:26)
+	at com.budgetmanagement.JwtServiceTest.testValidateToken(JwtServiceTest.java:44)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: java.lang.ClassNotFoundException: javax.xml.bind.DatatypeConverter
+	... 9 more
+

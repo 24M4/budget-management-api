@@ -1,0 +1,4 @@
+com\budgetmanagement\JwtServiceTest.class
+com\budgetmanagement\TransactionServiceTest.class
+com\budgetmanagement\UserServiceTest.class
+com\budgetmanagement\UserControllerTest.class
